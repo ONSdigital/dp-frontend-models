@@ -11,4 +11,5 @@ type Page struct {
 	SiteDomain               string         `json:"-"`
 	PatternLibraryAssetsPath string         `json:"-"`
 	Language                 string         `json:"-"`
+	HideHeaderAndFooter      bool           `json:"-"`
 }
