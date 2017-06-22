@@ -11,25 +11,24 @@ type Page struct {
 
 //DatasetLandingPage ...
 type DatasetLandingPage struct {
-	DatasetID           string    `json:"datasetID"`
-	FilterID            string    `json:"filterID"`
-	RelatedPublications []Related `json:"relatedPublications"`
-	RelatedDatasets     []Related `json:"relatedDatasets"`
-	RelatedMethodology  []Related `json:"relatedMethodology"`
-	RelatedLinks        []Related `json:"relatedLinks"`
-	Datasets            []Dataset `json:"datasets"`
-	Notes               string    `json:"markdown"`
-	MetaDescription     string    `json:"metaDescription"`
-	NationalStatistic   bool      `json:"nationalStatistic"`
-	ReleaseDate         bool      `json:"releaseDate"`
-	NextRelease         bool      `json:"nextRelease"`
-	IsTimeseries        bool      `json:"timeseries"`
+	DatasetID         string    `json:"datasetID"`
+	FilterID          string    `json:"filterID"`
+	Related           Related   `json:"_"`
+	Datasets          []Dataset `json:"datasets"`
+	Notes             string    `json:"markdown"`
+	MetaDescription   string    `json:"metaDescription"`
+	NationalStatistic bool      `json:"nationalStatistic"`
+	ReleaseDate       bool      `json:"releaseDate"`
+	NextRelease       bool      `json:"nextRelease"`
+	IsTimeseries      bool      `json:"timeseries"`
 }
 
-//Related page details
+//Related content (split by type) to this page
 type Related struct {
-	Title string `json:"title"`
-	URI   string `json:"uri"`
+	Publications []model.Related `json:"relatedPublications"`
+	Datasets     []model.Related `json:"relatedDatasets"`
+	Methodology  []model.Related `json:"relatedMethodology"`
+	Links        []model.Related `json:"relatedLinks"`
 }
 
 //Dataset has the file and title information for an individual dataset
