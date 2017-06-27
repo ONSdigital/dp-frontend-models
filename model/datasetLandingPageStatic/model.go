@@ -11,24 +11,26 @@ type Page struct {
 
 //DatasetLandingPage ...
 type DatasetLandingPage struct {
-	DatasetID         string    `json:"datasetID"`
-	FilterID          string    `json:"filterID"`
-	Related           Related   `json:"_"`
-	Datasets          []Dataset `json:"datasets"`
-	Notes             string    `json:"markdown"`
-	MetaDescription   string    `json:"metaDescription"`
-	NationalStatistic bool      `json:"nationalStatistic"`
-	ReleaseDate       bool      `json:"releaseDate"`
-	NextRelease       bool      `json:"nextRelease"`
-	IsTimeseries      bool      `json:"timeseries"`
+	DatasetID           string    `json:"dataset_id"`
+	FilterID            string    `json:"filter_id"`
+	Related             Related   `json:"related"`
+	Datasets            []Dataset `json:"datasets"`
+	Notes               string    `json:"markdown"`
+	MetaDescription     string    `json:"meta_description"`
+	IsNationalStatistic bool      `json:"national_statistic"`
+	ReleaseDate         string    `json:"release_date"`
+	NextRelease         string    `json:"next_release"`
+	IsTimeseries        bool      `json:"is_timeseries"`
+	Corrections         []Message `json:"corrections"`
+	Notices             []Message `json:"notices"`
 }
 
 //Related content (split by type) to this page
 type Related struct {
-	Publications []model.Related `json:"relatedPublications"`
-	Datasets     []model.Related `json:"relatedDatasets"`
-	Methodology  []model.Related `json:"relatedMethodology"`
-	Links        []model.Related `json:"relatedLinks"`
+	Publications []model.Related `json:"related_publications"`
+	Datasets     []model.Related `json:"related_datasets"`
+	Methodology  []model.Related `json:"related_methodology"`
+	Links        []model.Related `json:"related_links"`
 }
 
 //Dataset has the file and title information for an individual dataset
@@ -36,14 +38,15 @@ type Dataset struct {
 	Title                 string              `json:"title"`
 	Downloads             []Download          `json:"downloads"`
 	URI                   string              `json:"uri"`
-	HasVersions           bool                `json:"hasVersions"`
-	HasSupplementaryFiles bool                `json:"hasSupplementaryFiles"`
-	SupplementaryFiles    []SupplementaryFile `json:"supplementaryFiles"`
+	HasVersions           bool                `json:"has_versions"`
+	HasSupplementaryFiles bool                `json:"has_supplementary_files"`
+	SupplementaryFiles    []SupplementaryFile `json:"supplementary_files"`
+
+	IsLast bool `json:"is_last"`
 }
 
 //Download has the details for the an individual dataset's downloadable files
 type Download struct {
-	Title     string `json:"title"`
 	Extension string `json:"extension"`
 	Size      string `json:"size"`
 	URI       string `json:"uri"`
@@ -55,4 +58,10 @@ type SupplementaryFile struct {
 	Extension string `json:"extension"`
 	Size      string `json:"size"`
 	URI       string `json:"uri"`
+}
+
+//Message has a date and time, used for either correction or notices
+type Message struct {
+	Date     string `json:"date"`
+	Markdown string `json:"markdown"`
 }
