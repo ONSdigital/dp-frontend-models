@@ -10,5 +10,13 @@ type Page struct {
 
 // PreviewPage ...
 type PreviewPage struct {
-	FilterID string `json:"filter_id"`
+	FilterID  string     `json:"filter_id"`
+	Downloads []Download `json:"downloads"`
+}
+
+// Download has the details for an individual downloadable files
+type Download struct {
+	Extension string `json:"extension"`
+	Size      string `json:"size"`
+	URI       string `json:"uri"`
 }
