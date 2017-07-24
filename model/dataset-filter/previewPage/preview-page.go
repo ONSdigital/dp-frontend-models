@@ -26,6 +26,6 @@ type Download struct {
 
 // Dimension ...
 type Dimension struct {
-	Title  string   `json:"title"`
+	Name   string   `json:"name"`
 	Values []string `json:"values"`
 }
