@@ -10,11 +10,9 @@ type Page struct {
 
 // PreviewPage ...
 type PreviewPage struct {
-	FilterID           string      `json:"filter_id"`
-	Downloads          []Download  `json:"downloads"`
-	Dimensions         []Dimension `json:"dimensions"`
-	DatasetDescription string      `json:"dataset_description"`
-	DatasetTitle       string      `json:"dataset_title"`
+	FilterID   string      `json:"filter_id"`
+	Downloads  []Download  `json:"downloads"`
+	Dimensions []Dimension `json:"dimensions"`
 }
 
 // Download has the details for an individual downloadable files
