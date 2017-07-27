@@ -25,7 +25,7 @@ type Hierarchy struct {
 
 // AddAll ...
 type AddAll struct {
-	Amount int    `json:"amount"`
+	Amount string `json:"amount"`
 	URL    string `json:"url"`
 }
 
