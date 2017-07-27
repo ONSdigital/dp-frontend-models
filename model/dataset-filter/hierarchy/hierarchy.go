@@ -14,7 +14,7 @@ type Hierarchy struct {
 	Title         string   `json:"title"`
 	SaveAndReturn Link     `json:"save_and_return"`
 	Cancel        Link     `json:"cancel"`
-	FiltersAmount int      `json:"filters_amount"`
+	FiltersAmount string   `json:"filters_amount"`
 	AddAllFilters AddAll   `json:"add_all"`
 	FilterList    []List   `json:"filter_list"`
 	FiltersAdded  []Filter `json:"filters_added"`
@@ -38,7 +38,7 @@ type Filter struct {
 // List ...
 type List struct {
 	Label   string `json:"label"`
-	SubNum  int    `json:"sub_num"`
+	SubNum  string `json:"sub_num"`
 	SubType string `json:"sub_type"`
 	SubURL  string `json:"sub_url"`
 }
