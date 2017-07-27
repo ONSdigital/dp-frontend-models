@@ -21,12 +21,19 @@ type Hierarchy struct {
 	RemoveAll     Link     `json:"remove_all"`
 	GoBack        Link     `json:"go_back"`
 	Parent        string   `json:"parent"`
+	Metadata      Metadata `json:"metadata"`
 }
 
 // AddAll ...
 type AddAll struct {
 	Amount string `json:"amount"`
 	URL    string `json:"url"`
+}
+
+// Metadata ...
+type Metadata struct {
+	Name        string `json:"name"`
+	Description string `json:"description"`
 }
 
 // Filter ...
