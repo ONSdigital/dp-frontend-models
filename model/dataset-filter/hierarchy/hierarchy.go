@@ -37,10 +37,10 @@ type Filter struct {
 
 // List ...
 type List struct {
-	Location string `json:"location"`
-	SubNum   int    `json:"sub_num"`
-	SubType  string `json:"sub_type"`
-	SubURL   string `json:"sub_url"`
+	Label   string `json:"label"`
+	SubNum  int    `json:"sub_num"`
+	SubType string `json:"sub_type"`
+	SubURL  string `json:"sub_url"`
 }
 
 // Link ...
