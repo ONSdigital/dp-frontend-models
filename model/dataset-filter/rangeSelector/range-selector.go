@@ -6,7 +6,7 @@ import "github.com/ONSdigital/dp-frontend-models/model"
 type Page struct {
 	model.Page
 	Data     RangeSelector `json:"data"`
-	FilterID string        `json:"job_id"`
+	FilterID string        `json:"filter_id"`
 }
 
 // RangeSelector ...

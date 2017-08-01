@@ -1,31 +1,39 @@
-package geography
+package hierarchy
 
 import "github.com/ONSdigital/dp-frontend-models/model"
 
 // Page ...
 type Page struct {
 	model.Page
-	Data     Geography `json:"data"`
+	Data     Hierarchy `json:"data"`
 	FilterID string    `json:"filter_id"`
 }
 
-// Geography ...
-type Geography struct {
+// Hierarchy ...
+type Hierarchy struct {
+	Title         string   `json:"title"`
 	SaveAndReturn Link     `json:"save_and_return"`
 	Cancel        Link     `json:"cancel"`
-	FiltersAmount int      `json:"filters_amount"`
+	FiltersAmount string   `json:"filters_amount"`
 	AddAllFilters AddAll   `json:"add_all"`
 	FilterList    []List   `json:"filter_list"`
 	FiltersAdded  []Filter `json:"filters_added"`
 	RemoveAll     Link     `json:"remove_all"`
 	GoBack        Link     `json:"go_back"`
 	Parent        string   `json:"parent"`
+	Metadata      Metadata `json:"metadata"`
 }
 
 // AddAll ...
 type AddAll struct {
-	Amount int    `json:"amount"`
+	Amount string `json:"amount"`
 	URL    string `json:"url"`
+}
+
+// Metadata ...
+type Metadata struct {
+	Name        string `json:"name"`
+	Description string `json:"description"`
 }
 
 // Filter ...
@@ -36,8 +44,9 @@ type Filter struct {
 
 // List ...
 type List struct {
-	Location string `json:"location"`
-	SubNum   int    `json:"sub_num"`
+	Label    string `json:"label"`
+	Selected bool   `json:"selected"`
+	SubNum   string `json:"sub_num"`
 	SubType  string `json:"sub_type"`
 	SubURL   string `json:"sub_url"`
 }
