@@ -11,6 +11,7 @@ type Page struct {
 
 // RangeSelector ...
 type RangeSelector struct {
+	Title             string   `json:"title"`
 	AddFromList       Link     `json:"add_from_list"`
 	NumberOfSelectors int      `json:"num_of_selectors"`
 	AddAllInRange     Link     `json:"add_all"`
