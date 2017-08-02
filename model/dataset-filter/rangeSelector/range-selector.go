@@ -40,9 +40,8 @@ type Filter struct {
 
 // Range ...
 type Range struct {
-	StartNum     int    `json:"start_num"`
-	EndNum       int    `json:"end_num"`
-	StartLabel   string `json:"start_label"`
-	EndLabel     string `json:"end_label"`
-	AppendString string `json:"append_string"`
+	URL        string   `json:"url"`
+	Values     []string `json:"values"`
+	StartLabel string   `json:"start_label"`
+	EndLabel   string   `json:"end_label"`
 }
