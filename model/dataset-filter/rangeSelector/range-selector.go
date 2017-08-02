@@ -11,19 +11,16 @@ type Page struct {
 
 // RangeSelector ...
 type RangeSelector struct {
-	Title             string   `json:"title"`
-	AddFromList       Link     `json:"add_from_list"`
-	NumberOfSelectors int      `json:"num_of_selectors"`
-	AddAllInRange     Link     `json:"add_all"`
-	AddRange          Link     `json:"add_range"`
-	AddNewRange       Link     `json:"add_new_range"`
-	RemoveRange       Link     `json:"remove_range"`
-	SaveAndReturn     Link     `json:"save_and_return"`
-	Cancel            Link     `json:"cancel"`
-	FiltersAmount     int      `json:"filters_amount"`
-	FiltersAdded      []Filter `json:"filters_added"`
-	RemoveAll         Link     `json:"remove_all"`
-	RangeData         Range    `json:"range_values"`
+	Title         string   `json:"title"`
+	AddFromList   Link     `json:"add_from_list"`
+	AddAllInRange Link     `json:"add_all"`
+	AddRange      Link     `json:"add_range"`
+	SaveAndReturn Link     `json:"save_and_return"`
+	Cancel        Link     `json:"cancel"`
+	FiltersAmount int      `json:"filters_amount"`
+	FiltersAdded  []Filter `json:"filters_added"`
+	RemoveAll     Link     `json:"remove_all"`
+	RangeData     Range    `json:"range_values"`
 }
 
 // Link ...
