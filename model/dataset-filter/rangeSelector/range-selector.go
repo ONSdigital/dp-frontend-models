@@ -15,6 +15,7 @@ type RangeSelector struct {
 	AddFromList       Link     `json:"add_from_list"`
 	NumberOfSelectors int      `json:"num_of_selectors"`
 	AddAllInRange     Link     `json:"add_all"`
+	AddAllChecked     bool     `json:"add_all_checked"`
 	AddRange          Link     `json:"add_range"`
 	AddNewRange       Link     `json:"add_new_range"`
 	RemoveRange       Link     `json:"remove_range"`
