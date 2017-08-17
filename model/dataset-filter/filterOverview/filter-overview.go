@@ -13,6 +13,7 @@ type Page struct {
 type FilterOverview struct {
 	Dimensions         []Dimension `json:"dimensions"`
 	PreviewAndDownload Link        `json:"preview_and_download"`
+	ClearAll           Link        `json:"clear_all"`
 	Cancel             Link        `json:"cancel"`
 }
 
