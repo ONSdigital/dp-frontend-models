@@ -39,6 +39,7 @@ type Filter struct {
 type Range struct {
 	URL    string  `json:"url"`
 	Values []Value `json:"values"`
+	ID     string  `json:"id"`
 }
 
 // Value ...
