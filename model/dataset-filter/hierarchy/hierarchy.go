@@ -11,17 +11,21 @@ type Page struct {
 
 // Hierarchy ...
 type Hierarchy struct {
-	Title         string   `json:"title"`
-	SaveAndReturn Link     `json:"save_and_return"`
-	Cancel        Link     `json:"cancel"`
-	FiltersAmount string   `json:"filters_amount"`
-	AddAllFilters AddAll   `json:"add_all"`
-	FilterList    []List   `json:"filter_list"`
-	FiltersAdded  []Filter `json:"filters_added"`
-	RemoveAll     Link     `json:"remove_all"`
-	GoBack        Link     `json:"go_back"`
-	Parent        string   `json:"parent"`
-	Metadata      Metadata `json:"metadata"`
+	Title           string   `json:"title"`
+	SaveAndReturn   Link     `json:"save_and_return"`
+	Cancel          Link     `json:"cancel"`
+	FiltersAmount   string   `json:"filters_amount"`
+	AddAllFilters   AddAll   `json:"add_all"`
+	FilterList      []List   `json:"filter_list"`
+	FiltersAdded    []Filter `json:"filters_added"`
+	RemoveAll       Link     `json:"remove_all"`
+	GoBack          Link     `json:"go_back"`
+	Parent          string   `json:"parent"`
+	Metadata        Metadata `json:"metadata"`
+	FormAction      string   `json:"form_action"`
+	IsSearch        bool     `json:"is_search"`
+	NumberOfResults int      `json:"number_of_results"`
+	Query           string   `json:"query"`
 }
 
 // AddAll ...
