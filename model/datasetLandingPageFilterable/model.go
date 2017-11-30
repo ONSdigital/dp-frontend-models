@@ -22,6 +22,7 @@ type DatasetLandingPage struct {
 	QMIURL              string        `json:"qmi_url"`
 	IsNationalStatistic bool          `json:"is_national_statistic"`
 	Publications        []Publication `json:"publications"`
+	RelatedLinks        []Publication `json:"related_links"`
 	Citation            string        `json:"citation"`
 }
 
