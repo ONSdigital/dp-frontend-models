@@ -23,12 +23,18 @@ type DatasetLandingPage struct {
 	IsNationalStatistic bool          `json:"is_national_statistic"`
 	Publications        []Publication `json:"publications"`
 	RelatedLinks        []Publication `json:"related_links"`
+	LatestChanges       []Change      `json:"latest_changes"`
 	Citation            string        `json:"citation"`
 }
 
 type Publication struct {
 	Title string `json:"title"`
 	URL   string `json:"url"`
+}
+
+type Change struct {
+	Name        string `json:"name"`
+	Description string `json:"description"`
 }
 
 type Publisher struct {
@@ -41,6 +47,7 @@ type Dimension struct {
 	Title       string   `json:"title"`
 	Values      []string `json:"values"`
 	OptionsURL  string   `json:"options_url"`
+	TotalItems  int      `json:"total_items"`
 	Description string   `json:"description"`
 }
 
