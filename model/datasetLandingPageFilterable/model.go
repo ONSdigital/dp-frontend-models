@@ -25,6 +25,9 @@ type DatasetLandingPage struct {
 	RelatedLinks        []Publication `json:"related_links"`
 	LatestChanges       []Change      `json:"latest_changes"`
 	Citation            string        `json:"citation"`
+	DatasetTitle        string        `json:"dataset_title"`
+	UnitOfMeasurement   string        `json:"unit_of_measurement"`
+	Methodologies       []Methodology `json:"methodology"`
 }
 
 type Publication struct {
@@ -68,4 +71,11 @@ type Download struct {
 	Extension string `json:"extension"`
 	Size      string `json:"size"`
 	URI       string `json:"uri"`
+}
+
+// Methodology links
+type Methodology struct {
+	Description string `json:"description"`
+	URL         string `json:"href"`
+	Title       string `json:"title"`
 }
