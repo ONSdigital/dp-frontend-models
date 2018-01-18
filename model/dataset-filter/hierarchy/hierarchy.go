@@ -25,6 +25,7 @@ type Hierarchy struct {
 	Type          string   `json:"type"`
 	Metadata      Metadata `json:"metadata"`
 	DatasetTitle  string   `json:"dataset_title"`
+	SearchURL     string   `json:"search_url"`
 }
 
 // AddAll ...
