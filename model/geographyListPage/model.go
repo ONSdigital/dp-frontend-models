@@ -1,15 +1,15 @@
-package geographyHomepage
+package geographyListPage
 
 import "github.com/ONSdigital/dp-frontend-models/model"
 
 // Page contains the data re-used on each page as well as the data for the current page
 type Page struct {
 	model.Page
-	Data GeographyLandingPage `json:"data"`
+	Data GeographyListPage `json:"data"`
 }
 
-// GeographyLandingPage represents the data on the Geography Landing page
-type GeographyLandingPage struct {
+// GeographyListPage represents the Geography data on the Geography list page
+type GeographyListPage struct {
 	AreaTypes []AreaType `json:"items"`
 }
 
