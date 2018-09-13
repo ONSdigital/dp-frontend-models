@@ -10,11 +10,11 @@ type Page struct {
 
 // GeographyLandingPage represents the data on the Geography Landing page
 type GeographyLandingPage struct {
-	AreaTypes []AreaType `json:"items"`
+	Items []Items `json:"items"`
 }
 
-// AreaType represents the Type of data of the Geography page
-type AreaType struct {
-	Name string `json:"name"`
-	ID   string `json:"id"`
+// Items represents the Type of data of the Geography page
+type Items struct {
+	Label string `json:"label"`
+	ID    string `json:"id"`
 }
