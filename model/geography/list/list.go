@@ -17,4 +17,5 @@ type GeographyListPage struct {
 type Item struct {
 	Label string `json:"label"`
 	ID    string `json:"id"`
+	URI   string `json:"uri"`
 }
