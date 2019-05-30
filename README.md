@@ -1,7 +1,9 @@
 dp-frontend-models
 ================
 
-Front end models.
+Data models that can be used to map to the [templates in the frontend renderer](https://github.com/ONSdigital/dp-frontend-renderer/tree/develop/assets/templates).
+
+See [CONTRIBUTING](CONTRIBUTING.md) for instructions on how to add new models.
 
 ### License
 
