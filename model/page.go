@@ -21,5 +21,5 @@ type Page struct {
 	BetaBannerEnabled                bool           `json:"beta_banner_enabled"`
 	EnableLoop11                     bool           `json:"enable_loop11"`
 	CookiesPreferenceSet             bool           `json:cookies_preferences_set`
-	CookiesPolicy                    CookiePolicy   `json:cookies_policy`
+	CookiesPolicy                    CookiesPolicy  `json:cookies_policy`
 }
