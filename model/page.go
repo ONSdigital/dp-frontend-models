@@ -20,6 +20,7 @@ type Page struct {
 	ReleaseDate                      string         `json:"release_date"`
 	BetaBannerEnabled                bool           `json:"beta_banner_enabled"`
 	EnableLoop11                     bool           `json:"enable_loop11"`
-	CookiesPreferenceSet             bool           `json:cookies_preferences_set`
-	CookiesPolicy                    CookiesPolicy  `json:cookies_policy`
+	EnableCookiesControl             bool           `json:"enable_cookies_control"`
+	CookiesPreferenceSet             bool           `json:"cookies_preferences_set"`
+	CookiesPolicy                    CookiesPolicy  `json:"cookies_policy"`
 }
