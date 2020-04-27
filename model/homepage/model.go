@@ -25,10 +25,11 @@ type Release struct {
 
 //KeyFigure is the data for an individual timeseries
 type KeyFigure struct {
-	Title         string         `json:"title"`
-	Summary       string         `json:"summary"`
-	ReleaseDate   string         `json:"release_date"`
-	LatestFigures []LatestFigure `json:"latest_figure"`
+	Title                 string         `json:"title"`
+	Summary               string         `json:"summary"`
+	ReleaseDate           string         `json:"release_date"`
+	LatestFigures         []LatestFigure `json:"latest_figure"`
+	NumberOfLatestFigures int            `json:"number_of_latest_figures"`
 }
 
 //LatestFigure is the extra information displayed for the latest figure for a timeseries
