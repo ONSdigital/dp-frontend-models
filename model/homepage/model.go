@@ -53,7 +53,7 @@ type Trend struct {
 	isFlat bool `json:"is_flat"`
 }
 
-//Feature is data for content that displays under a 'featured' heading
+//Feature is data for linked content
 type Feature struct {
 	Title   string `json:"title"`
 	Summary string `json:"summary"`
