@@ -42,7 +42,7 @@ type KeyFigureURI struct {
 type LatestFigure struct {
 	Date             string `json:"date"`
 	Figure           string `json:"figure"`
-	Trend            Trend  `json:"trend`
+	Trend            Trend  `json:"trend"`
 	TrendDescription string `json:"trend_description"`
 	Unit             string `json:"unit"`
 }
