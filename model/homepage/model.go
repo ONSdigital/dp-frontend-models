@@ -48,10 +48,11 @@ type FigureURIs struct {
 	Data     string `json:"data"`
 }
 
+// Trend contains bool values about the trend of a key figure (up from last month, down from last month, etc.)
 type Trend struct {
-	isUp   bool `json:"is_up"`
-	isDown bool `json:"is_down"`
-	isFlat bool `json:"is_flat"`
+	IsUp   bool `json:"is_up"`
+	IsDown bool `json:"is_down"`
+	IsFlat bool `json:"is_flat"`
 }
 
 //Feature is data for linked content
