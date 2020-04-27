@@ -13,7 +13,7 @@ type Homepage struct {
 	KeyFigures []KeyFigure `json:"key_figures"`
 	Releases   []Release   `json:"releases"`
 	Featured   []Feature   `json:"featured"`
-	Other      []Feature   `json:"other"`
+	AroundONS  []Feature   `json:"arounds_ons"`
 }
 
 //Release is the data for an individual release
