@@ -29,22 +29,22 @@ type KeyFigure struct {
 	Summary       string         `json:"summary"`
 	ReleaseDate   string         `json:"release_date"`
 	LatestFigures []LatestFigure `json:"latest_figure"`
-	KeyFigureURIs KeyFigureURIs  `json:"key_figure_uris"`
-}
-
-// KeyFigureURI struct contains URI's to related analysis and data
-type KeyFigureURI struct {
-	Analysis string `json:"analysis"`
-	Data     string `json:"data"`
 }
 
 //LatestFigure is the extra information displayed for the latest figure for a timeseries
 type LatestFigure struct {
-	Date             string `json:"date"`
-	Figure           string `json:"figure"`
-	Trend            Trend  `json:"trend"`
-	TrendDescription string `json:"trend_description"`
-	Unit             string `json:"unit"`
+	Date             string           `json:"date"`
+	Figure           string           `json:"figure"`
+	Trend            Trend            `json:"trend"`
+	TrendDescription string           `json:"trend_description"`
+	Unit             string           `json:"unit"`
+	LatestFigureURIs LatestFigureURIs `json:"latest_figure_uris"`
+}
+
+// LatestFigureURIs struct contains URI's to related analysis and data
+type LatestFigureURIs struct {
+	Analysis string `json:"analysis"`
+	Data     string `json:"data"`
 }
 
 type Trend struct {
