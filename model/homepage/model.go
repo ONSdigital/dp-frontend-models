@@ -25,25 +25,25 @@ type Release struct {
 
 //KeyFigure is the data for an individual timeseries
 type KeyFigure struct {
-	Title                 string         `json:"title"`
-	Summary               string         `json:"summary"`
-	ReleaseDate           string         `json:"release_date"`
-	LatestFigures         []LatestFigure `json:"latest_figure"`
-	NumberOfLatestFigures int            `json:"number_of_latest_figures"`
+	Title           string   `json:"title"`
+	Summary         string   `json:"summary"`
+	ReleaseDate     string   `json:"release_date"`
+	Figures         []Figure `json:"figures"`
+	NumberOfFigures int      `json:"number_of_figures"`
 }
 
-//LatestFigure is the extra information displayed for the latest figure for a timeseries
-type LatestFigure struct {
-	Date             string           `json:"date"`
-	Figure           string           `json:"figure"`
-	Trend            Trend            `json:"trend"`
-	TrendDescription string           `json:"trend_description"`
-	Unit             string           `json:"unit"`
-	LatestFigureURIs LatestFigureURIs `json:"latest_figure_uris"`
+//Figure is the extra information displayed for the latest figure for a timeseries
+type Figure struct {
+	Date             string     `json:"date"`
+	Figure           string     `json:"figure"`
+	Trend            Trend      `json:"trend"`
+	TrendDescription string     `json:"trend_description"`
+	Unit             string     `json:"unit"`
+	FigureURIs       FigureURIs `json:"figure_uris"`
 }
 
-// LatestFigureURIs struct contains URI's to related analysis and data
-type LatestFigureURIs struct {
+// FigureURIs struct contains URI's to related analysis and data
+type FigureURIs struct {
 	Analysis string `json:"analysis"`
 	Data     string `json:"data"`
 }
