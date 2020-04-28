@@ -10,10 +10,10 @@ type Page struct {
 
 //Homepage contains data specific to this page type
 type Homepage struct {
-	KeyFigures []KeyFigure `json:"key_figures"`
-	Releases   []Release   `json:"releases"`
-	Featured   []Feature   `json:"featured"`
-	AroundONS  []Feature   `json:"arounds_ons"`
+	MainFigures []MainFigure `json:"key_figures"`
+	Releases    []Release    `json:"releases"`
+	Featured    []Feature    `json:"featured"`
+	AroundONS   []Feature    `json:"arounds_ons"`
 }
 
 //Release is the data for an individual release
@@ -23,17 +23,10 @@ type Release struct {
 	ReleaseDate string `json:"releaseDate"`
 }
 
-//KeyFigure is the data for an individual timeseries
-type KeyFigure struct {
-	Title           string   `json:"title"`
-	Summary         string   `json:"summary"`
-	ReleaseDate     string   `json:"release_date"`
-	Figures         []Figure `json:"figures"`
-	NumberOfFigures int      `json:"number_of_figures"`
-}
-
-//Figure is the extra information displayed for the latest figure for a timeseries
-type Figure struct {
+//MainFigure is the data for an individual timeseries
+type MainFigure struct {
+	Title            string     `json:"title"`
+	Summary          string     `json:"summary"`
 	Date             string     `json:"date"`
 	Figure           string     `json:"figure"`
 	Trend            Trend      `json:"trend"`
