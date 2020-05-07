@@ -1,6 +1,8 @@
 package model
 
-import "github.com/ONSdigital/dp-frontend-models/model"
+import (
+	"github.com/ONSdigital/dp-frontend-models/model"
+)
 
 //Page contains data re-used for each page type a Data struct for data specific to the page type
 type Page struct {
@@ -44,9 +46,11 @@ type FigureURIs struct {
 
 // Trend contains bool values about the trend of a key figure (up from last month, down from last month, etc.)
 type Trend struct {
-	IsUp   bool `json:"is_up"`
-	IsDown bool `json:"is_down"`
-	IsFlat bool `json:"is_flat"`
+	IsUp       bool   `json:"is_up"`
+	IsDown     bool   `json:"is_down"`
+	IsFlat     bool   `json:"is_flat"`
+	Difference string `json:"difference"`
+	Period     string `json:"period"`
 }
 
 //Feature is data for linked content
