@@ -1,4 +1,4 @@
-package homepage
+package model
 
 import "github.com/ONSdigital/dp-frontend-models/model"
 
@@ -10,10 +10,10 @@ type Page struct {
 
 //Homepage contains data specific to this page type
 type Homepage struct {
-	Releases        []Release         `json:"releases"`
-	HeadlineFigures []*HeadlineFigure `json:"headlineFigures"`
-	Featured        []Featured        `json:"featured"`
-	Other           []Other           `json:"other"`
+	MainFigures map[string]*MainFigure `json:"main_figures"`
+	Releases    []Release              `json:"releases"`
+	Featured    []Feature              `json:"featured"`
+	AroundONS   []Feature              `json:"arounds_ons"`
 }
 
 //Release is the data for an individual release
@@ -23,39 +23,35 @@ type Release struct {
 	ReleaseDate string `json:"releaseDate"`
 }
 
-//HeadlineFigure is the data for an individual timeseries
-type HeadlineFigure struct {
-	Title         string          `json:"title"`
-	URI           string          `json:"uri"`
-	ReleaseDate   string          `json:"releaseDate"`
-	LatestFigure  LatestFigure    `json:"latestFigure"`
-	SparklineData []SparklineData `json:"sparklineData"`
-	StartDate     string          `json:"-"`
-	EndDate       string          `json:"-"`
+//MainFigure is the data for an individual timeseries
+type MainFigure struct {
+	ID               string     `json:"id"`
+	Title            string     `json:"title"`
+	Summary          string     `json:"summary"`
+	Date             string     `json:"date"`
+	Figure           string     `json:"figure"`
+	Trend            Trend      `json:"trend"`
+	TrendDescription string     `json:"trend_description"`
+	Unit             string     `json:"unit"`
+	FigureURIs       FigureURIs `json:"figure_uris"`
 }
 
-//SparklineData is the data that is sent to highcharts to produce the sparkline for each timeseries
-type SparklineData struct {
-	Name    string  `json:"name"`
-	Y       float32 `json:"y"`
-	StringY string  `json:"stringY"`
+// FigureURIs struct contains URI's to related analysis and data
+type FigureURIs struct {
+	Analysis string `json:"analysis"`
+	Data     string `json:"data"`
 }
 
-//LatestFigure is the extra information displayed for the latest figure for a timeseries
-type LatestFigure struct {
-	PreUnit string `json:"preUnit"`
-	Unit    string `json:"unit"`
-	Figure  string `json:"figure"`
+// Trend contains bool values about the trend of a key figure (up from last month, down from last month, etc.)
+type Trend struct {
+	IsUp   bool `json:"is_up"`
+	IsDown bool `json:"is_down"`
+	IsFlat bool `json:"is_flat"`
 }
 
-//Featured is data for content that displays under a 'featured' heading
-type Featured struct {
-	Title string `json:"title"`
-	URI   string `json:"uri"`
-}
-
-//Other is data for content that displays under a 'other' heading
-type Other struct {
-	Title string `json:"title"`
-	URI   string `json:"uri"`
+//Feature is data for linked content
+type Feature struct {
+	Title   string `json:"title"`
+	Summary string `json:"summary"`
+	URI     string `json:"uri"`
 }
