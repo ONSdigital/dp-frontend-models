@@ -12,10 +12,16 @@ type Page struct {
 
 //Homepage contains data specific to this page type
 type Homepage struct {
-	MainFigures map[string]*MainFigure `json:"main_figures"`
-	Releases    []Release              `json:"releases"`
-	Featured    []Feature              `json:"featured"`
-	AroundONS   []Feature              `json:"arounds_ons"`
+	MainFigures     map[string]*MainFigure `json:"main_figures"`
+	ReleaseCalendar ReleaseCalendar        `json:"release_calendar"`
+	Featured        []Feature              `json:"featured"`
+	AroundONS       []Feature              `json:"arounds_ons"`
+}
+
+//ReleaseCalendar is data for release calendar block
+type ReleaseCalendar struct {
+	Releases         []Release `json:"releases"`
+	NumberOfReleases string    `json"number_of_releases"`
 }
 
 //Release is the data for an individual release
