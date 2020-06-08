@@ -21,7 +21,8 @@ type Homepage struct {
 //ReleaseCalendar is data for release calendar block
 type ReleaseCalendar struct {
 	Releases                         []Release `json:"releases"`
-	NumberOfOtherReleasesInSevenDays int       `json:"number_of_releases"`
+	NumberOfReleases                 int       `json:"number_of_releases"`
+	NumberOfOtherReleasesInSevenDays int       `json:"number_of_other_releases"`
 }
 
 //Release is the data for an individual release
