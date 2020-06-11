@@ -62,7 +62,8 @@ type Trend struct {
 
 //Feature is data for linked content
 type Feature struct {
-	Title   string `json:"title"`
-	Summary string `json:"summary"`
-	URI     string `json:"uri"`
+	Title       string `json:"title"`
+	Description string `json:"description"`
+	URI         string `json:"uri"`
+	ImageURL    string `json:"image_url"`
 }
