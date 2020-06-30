@@ -24,4 +24,9 @@ type Page struct {
 	CookiesPolicy                    CookiesPolicy  `json:"cookies_policy"`
 	EnableJSONLDControl              bool           `json:"enable_jsonld_control"`
 	HasJSONLD                        bool           `json:"has_jsonld"`
+	FeatureFlags                     FeatureFlags   `json:"feature_flags"`
+}
+
+type FeatureFlags struct {
+	HideCookieBanner bool `json:"hide_cookie_banner"`
 }
