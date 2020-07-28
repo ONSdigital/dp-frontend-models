@@ -21,25 +21,25 @@ type Search struct {
 // Response ...
 type Response struct {
 	Count        int           `json:"count"`
-	ContentTypes []contentType `json:"content_types"`
-	Items        []contentItem `json:"items"`
+	ContentTypes []ContentType `json:"content_types"`
+	Items        []ContentItem `json:"items"`
 	Suggestions  []string      `json:"suggestions,omitempty"`
 }
 
-type contentType struct {
+type ContentType struct {
 	Type  string `json:"type"`
 	Count int    `json:"count"`
 }
 
-type contentItem struct {
-	Description description `json:"description"`
+type ContentItem struct {
+	Description Description `json:"description"`
 	Type        string      `json:"type"`
 	URI         string      `json:"uri"`
-	Matches     *matches    `json:"matches,omitempty"`
+	Matches     *Matches    `json:"matches,omitempty"`
 }
 
-type description struct {
-	Contact           *contact  `json:"contact,omitempty"`
+type Description struct {
+	Contact           *Contact  `json:"contact,omitempty"`
 	DatasetID         string    `json:"dataset_id,omitempty"`
 	Edition           string    `json:"edition,omitempty"`
 	Headline1         string    `json:"headline1,omitempty"`
@@ -59,24 +59,24 @@ type description struct {
 	Unit              string    `json:"unit,omitempty"`
 }
 
-type contact struct {
+type Contact struct {
 	Name      string `json:"name"`
 	Telephone string `json:"telephone,omitempty"`
 	Email     string `json:"email"`
 }
 
-type matches struct {
+type Matches struct {
 	Description struct {
-		Summary         *[]matchDetails `json:"summary"`
-		Title           *[]matchDetails `json:"title"`
-		Edition         *[]matchDetails `json:"edition,omitempty"`
-		MetaDescription *[]matchDetails `json:"meta_description,omitempty"`
-		Keywords        *[]matchDetails `json:"keywords,omitempty"`
-		DatasetID       *[]matchDetails `json:"dataset_id,omitempty"`
+		Summary         *[]MatchDetails `json:"summary"`
+		Title           *[]MatchDetails `json:"title"`
+		Edition         *[]MatchDetails `json:"edition,omitempty"`
+		MetaDescription *[]MatchDetails `json:"meta_description,omitempty"`
+		Keywords        *[]MatchDetails `json:"keywords,omitempty"`
+		DatasetID       *[]MatchDetails `json:"dataset_id,omitempty"`
 	} `json:"description"`
 }
 
-type matchDetails struct {
+type MatchDetails struct {
 	Value string `json:"value,omitempty"`
 	Start int    `json:"start"`
 	End   int    `json:"end"`
