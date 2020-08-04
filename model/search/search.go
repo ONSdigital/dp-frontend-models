@@ -66,14 +66,16 @@ type Contact struct {
 }
 
 type Matches struct {
-	Description struct {
-		Summary         *[]MatchDetails `json:"summary"`
-		Title           *[]MatchDetails `json:"title"`
-		Edition         *[]MatchDetails `json:"edition,omitempty"`
-		MetaDescription *[]MatchDetails `json:"meta_description,omitempty"`
-		Keywords        *[]MatchDetails `json:"keywords,omitempty"`
-		DatasetID       *[]MatchDetails `json:"dataset_id,omitempty"`
-	} `json:"description"`
+	Description MatchDescription `json:"description"`
+}
+
+type MatchDescription struct {
+	Summary         *[]MatchDetails `json:"summary"`
+	Title           *[]MatchDetails `json:"title"`
+	Edition         *[]MatchDetails `json:"edition,omitempty"`
+	MetaDescription *[]MatchDetails `json:"meta_description,omitempty"`
+	Keywords        *[]MatchDetails `json:"keywords,omitempty"`
+	DatasetID       *[]MatchDetails `json:"dataset_id,omitempty"`
 }
 
 type MatchDetails struct {
