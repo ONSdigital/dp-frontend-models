@@ -19,7 +19,6 @@ type Page struct {
 	ShowFeedbackForm                 bool           `json:"show_feedback_form"`
 	ReleaseDate                      string         `json:"release_date"`
 	BetaBannerEnabled                bool           `json:"beta_banner_enabled"`
-	EnableCookiesControl             bool           `json:"enable_cookies_control"`
 	CookiesPreferencesSet            bool           `json:"cookies_preferences_set"`
 	CookiesPolicy                    CookiesPolicy  `json:"cookies_policy"`
 	EnableJSONLDControl              bool           `json:"enable_jsonld_control"`
