@@ -12,12 +12,12 @@ type Page struct {
 
 //Homepage contains data specific to this page type
 type Homepage struct {
-	MainFigures           map[string]*MainFigure `json:"main_figures"`
-	NoMainFigures         bool                   `json:"no_main_figures"`
-	ReleaseCalendar       ReleaseCalendar        `json:"release_calendar"`
-	Featured              []Feature              `json:"featured"`
-	FeaturedContentLoaded bool                   `json:"featured_content_loaded"`
-	AroundONS             []Feature              `json:"arounds_ons"`
+	MainFigures        map[string]*MainFigure `json:"main_figures"`
+	HasMainFigures     bool                   `json:"has_main_figures"`
+	ReleaseCalendar    ReleaseCalendar        `json:"release_calendar"`
+	Featured           []Feature              `json:"featured"`
+	HasFeaturedContent bool                   `json:"has_featured_content"`
+	AroundONS          []Feature              `json:"arounds_ons"`
 }
 
 //ReleaseCalendar is data for release calendar block
