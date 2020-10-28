@@ -16,7 +16,6 @@ type Page struct {
 	PatternLibraryAssetsPath         string         `json:"-"`
 	Language                         string         `json:"language"`
 	IncludeAssetsIntegrityAttributes bool           `json:"-"`
-	ShowFeedbackForm                 bool           `json:"show_feedback_form"`
 	ReleaseDate                      string         `json:"release_date"`
 	BetaBannerEnabled                bool           `json:"beta_banner_enabled"`
 	CookiesPreferencesSet            bool           `json:"cookies_preferences_set"`
