@@ -2,23 +2,33 @@ package search
 
 import "github.com/ONSdigital/dp-frontend-models/model"
 
-// Page ...
+// Page represents the search page
 type Page struct {
 	model.Page
 	Data Search `json:"data"`
 }
 
-// Search ..
+// Search represents all search parameters and response data of the search
 type Search struct {
-	Query    string   `json:"query"`
-	Filter   []string `json:"filter,omitempty"`
-	Sort     string   `json:"sort,omitempty"`
-	Limit    int      `json:"limit,omitempty"`
-	Offset   int      `json:"offset,omitempty"`
-	Response Response `json:"response"`
+	Query         string                  `json:"query"`
+	Filter        []string                `json:"filter,omitempty"`
+	FilterContent []string                `json:"filter_content,omitempty"`
+	Sort          string                  `json:"sort,omitempty"`
+	SortText      string                  `json:"sort_text,omitempty"`
+	Limit         int                     `json:"limit,omitempty"`
+	Offset        int                     `json:"offset,omitempty"`
+	Category      map[string][]FilterType `json:"category"`
+	Response      Response                `json:"response"`
 }
 
-// Response ...
+// FilterType informs the name of the search type displayed on the website, the query retrieved from renderer and all the subtypes to pass to the logic
+type FilterType struct {
+	Name      string `json:"name"`
+	QueryType string `json:"query_type"`
+	SubTypes  string `json:"sub_types"`
+}
+
+// Response represents the search results
 type Response struct {
 	Count        int           `json:"count"`
 	ContentTypes []ContentType `json:"content_types"`
@@ -26,11 +36,13 @@ type Response struct {
 	Suggestions  []string      `json:"suggestions,omitempty"`
 }
 
+// ContentType represents the type of the search results and the number of results for each type
 type ContentType struct {
 	Type  string `json:"type"`
 	Count int    `json:"count"`
 }
 
+// ContentItem represents each search result
 type ContentItem struct {
 	Description Description `json:"description"`
 	Type        string      `json:"type"`
@@ -38,6 +50,7 @@ type ContentItem struct {
 	Matches     *Matches    `json:"matches,omitempty"`
 }
 
+// Description represents each search result description
 type Description struct {
 	Contact           *Contact  `json:"contact,omitempty"`
 	DatasetID         string    `json:"dataset_id,omitempty"`
@@ -59,16 +72,19 @@ type Description struct {
 	Unit              string    `json:"unit,omitempty"`
 }
 
+// Contact represents each search result contact details
 type Contact struct {
 	Name      string `json:"name"`
 	Telephone string `json:"telephone,omitempty"`
 	Email     string `json:"email"`
 }
 
+// Matches represents each search result matches
 type Matches struct {
 	Description MatchDescription `json:"description"`
 }
 
+// MatchDescription represents each search result matches' description
 type MatchDescription struct {
 	Summary         *[]MatchDetails `json:"summary"`
 	Title           *[]MatchDetails `json:"title"`
@@ -78,6 +94,7 @@ type MatchDescription struct {
 	DatasetID       *[]MatchDetails `json:"dataset_id,omitempty"`
 }
 
+// MatchDetails represents each search result matches' details
 type MatchDetails struct {
 	Value string `json:"value,omitempty"`
 	Start int    `json:"start"`
