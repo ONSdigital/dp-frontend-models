@@ -10,13 +10,12 @@ type Page struct {
 
 // Search represents all search parameters and response data of the search
 type Search struct {
-	Query    string                   `json:"query"`
-	Filter   Filter                   `json:"filter,omitempty"`
-	Sort     Sort                     `json:"sort,omitempty"`
-	Limit    int                      `json:"limit,omitempty"`
-	Offset   int                      `json:"offset,omitempty"`
-	Category map[string][]SubCategory `json:"category"`
-	Response Response                 `json:"response"`
+	Query    string   `json:"query"`
+	Filter   Filter   `json:"filter,omitempty"`
+	Sort     Sort     `json:"sort,omitempty"`
+	Limit    int      `json:"limit,omitempty"`
+	Offset   int      `json:"offset,omitempty"`
+	Response Response `json:"response"`
 }
 
 // Filter represents all the information of filter related to the search page
@@ -32,24 +31,26 @@ type Sort struct {
 	FilterText string `json:"filter_text,omitempty"`
 }
 
-// SubCategory informs the localise key of the search type which come under the category and the query for the type
-type SubCategory struct {
-	LocaliseKeyName string `json:"localise_key"`
-	FilterQuery     string `json:"filter_query"`
-}
-
 // Response represents the search results
 type Response struct {
-	Count        int           `json:"count"`
-	ContentTypes []ContentType `json:"content_types"`
-	Items        []ContentItem `json:"items"`
-	Suggestions  []string      `json:"suggestions,omitempty"`
+	Count       int           `json:"count"`
+	Categories  []Category    `json:"categories"`
+	Items       []ContentItem `json:"items"`
+	Suggestions []string      `json:"suggestions,omitempty"`
+}
+
+// Category represents all the search categories in search page
+type Category struct {
+	Count           int           `json:"count"`
+	LocaliseKeyName string        `json:"localise_key"`
+	ContentTypes    []ContentType `json:"content_types"`
 }
 
 // ContentType represents the type of the search results and the number of results for each type
 type ContentType struct {
-	Type  string `json:"type"`
-	Count int    `json:"count"`
+	Type            string `json:"type"`
+	Count           int    `json:"count"`
+	LocaliseKeyName string `json:"localise_key"`
 }
 
 // ContentItem represents each search result
