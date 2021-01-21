@@ -10,13 +10,13 @@ type Page struct {
 
 // Search represents all search parameters and response data of the search
 type Search struct {
-	Query    string                  `json:"query"`
-	Filter   Filter                  `json:"filter,omitempty"`
-	Sort     Sort                    `json:"sort,omitempty"`
-	Limit    int                     `json:"limit,omitempty"`
-	Offset   int                     `json:"offset,omitempty"`
-	Category map[string][]FilterType `json:"category"`
-	Response Response                `json:"response"`
+	Query    string                   `json:"query"`
+	Filter   Filter                   `json:"filter,omitempty"`
+	Sort     Sort                     `json:"sort,omitempty"`
+	Limit    int                      `json:"limit,omitempty"`
+	Offset   int                      `json:"offset,omitempty"`
+	Category map[string][]SubCategory `json:"category"`
+	Response Response                 `json:"response"`
 }
 
 // Filter represents all the information of filter related to the search page
@@ -32,10 +32,10 @@ type Sort struct {
 	FilterText string `json:"filter_text,omitempty"`
 }
 
-// FilterType informs the name of the search type displayed on the website, the query retrieved from renderer and all the subtypes to pass to the logic
-type FilterType struct {
+// SubCategory informs the localise key of the search type which come under the category and the query for the type
+type SubCategory struct {
 	LocaliseKeyName string `json:"localise_key"`
-	QueryType       string `json:"query_type"`
+	FilterQuery     string `json:"filter_query"`
 }
 
 // Response represents the search results
