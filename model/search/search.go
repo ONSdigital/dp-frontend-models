@@ -26,9 +26,9 @@ type Filter struct {
 
 // Sort represents all the information of sorting related to the search page
 type Sort struct {
-	Query      string `json:"query,omitempty"`
-	Text       string `json:"text,omitempty"`
-	FilterText string `json:"filter_text,omitempty"`
+	Query              string   `json:"query,omitempty"`
+	LocaliseFilterKeys []string `json:"text,omitempty"`
+	FilterText         string   `json:"filter_text,omitempty"`
 }
 
 // Response represents the search results
