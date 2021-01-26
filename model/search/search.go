@@ -20,7 +20,7 @@ type Search struct {
 
 // Filter represents all the information of filter related to the search page
 type Filter struct {
-	Query   string   `json:"query,omitempty"`
+	Query   []string `json:"query,omitempty"`
 	Options []string `json:"options,omitempty"`
 }
 
