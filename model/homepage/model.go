@@ -42,6 +42,7 @@ type MainFigure struct {
 	Date             string     `json:"date"`
 	Figure           string     `json:"figure"`
 	Trend            Trend      `json:"trend"`
+	ShowTrend        bool       `json:"show_trend"`
 	TrendDescription string     `json:"trend_description"`
 	Unit             string     `json:"unit"`
 	FigureURIs       FigureURIs `json:"figure_uris"`
