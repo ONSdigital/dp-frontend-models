@@ -10,12 +10,12 @@ type Page struct {
 
 // Search represents all search parameters and response data of the search
 type Search struct {
-	Query    string   `json:"query"`
-	Filter   []string `json:"filter,omitempty"`
-	Sort     Sort     `json:"sort,omitempty"`
-	Limit    Limit    `json:"limit,omitempty"`
-	Offset   Offset   `json:"offset,omitempty"`
-	Response Response `json:"response"`
+	Query      string     `json:"query"`
+	Filter     []string   `json:"filter,omitempty"`
+	Sort       Sort       `json:"sort,omitempty"`
+	Limit      Limit      `json:"limit,omitempty"`
+	Pagination Pagination `json:"offset,omitempty"`
+	Response   Response   `json:"response"`
 }
 
 // Sort represents all the information of sorting related to the search page
