@@ -11,17 +11,11 @@ type Page struct {
 // Search represents all search parameters and response data of the search
 type Search struct {
 	Query    string   `json:"query"`
-	Filter   Filter   `json:"filter,omitempty"`
+	Filter   []string `json:"filter,omitempty"`
 	Sort     Sort     `json:"sort,omitempty"`
-	Limit    int      `json:"limit,omitempty"`
-	Offset   int      `json:"offset,omitempty"`
+	Limit    Limit    `json:"limit,omitempty"`
+	Offset   Offset   `json:"offset,omitempty"`
 	Response Response `json:"response"`
-}
-
-// Filter represents all the information of filter related to the search page
-type Filter struct {
-	Query   []string `json:"query,omitempty"`
-	Options []string `json:"options,omitempty"`
 }
 
 // Sort represents all the information of sorting related to the search page
@@ -36,6 +30,19 @@ type Sort struct {
 type SortOptions struct {
 	Query           string `json:"query,omitempty"`
 	LocaliseKeyName string `json:"localise_key"`
+}
+
+// Limit represents the number of results to be shown in one page and all the possible limit options
+type Limit struct {
+	Query   int   `json:"query,omitempty"`
+	Options []int `json:"options,omitempty"`
+}
+
+// Offset represents
+type Offset struct {
+	Page           int    `json:"page,omitempty"`
+	TotalPages     int    `json:"total_pages,omitempty"`
+	URLWithoutPage string `json:"url_without_page,omitempty"`
 }
 
 // Response represents the search results
