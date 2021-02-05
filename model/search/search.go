@@ -13,7 +13,6 @@ type Search struct {
 	Query      string     `json:"query"`
 	Filter     []string   `json:"filter,omitempty"`
 	Sort       Sort       `json:"sort,omitempty"`
-	Limit      Limit      `json:"limit,omitempty"`
 	Pagination Pagination `json:"offset,omitempty"`
 	Response   Response   `json:"response"`
 }
@@ -32,17 +31,13 @@ type SortOptions struct {
 	LocaliseKeyName string `json:"localise_key"`
 }
 
-// Limit represents the number of results to be shown in one page and all the possible limit options
-type Limit struct {
-	Query   int   `json:"query,omitempty"`
-	Options []int `json:"options,omitempty"`
-}
-
 // Pagination represents all information regarding pagination of search results
 type Pagination struct {
 	Page           int    `json:"page,omitempty"`
 	TotalPages     int    `json:"total_pages,omitempty"`
 	URLWithoutPage string `json:"url_without_page,omitempty"`
+	Limit          int    `json:"limit,omitempty"`
+	LimitOptions   []int  `json:"limit_options,omitempty"`
 }
 
 // Response represents the search results
