@@ -38,8 +38,8 @@ type Limit struct {
 	Options []int `json:"options,omitempty"`
 }
 
-// Offset represents
-type Offset struct {
+// Pagination represents all information regarding pagination of search results
+type Pagination struct {
 	Page           int    `json:"page,omitempty"`
 	TotalPages     int    `json:"total_pages,omitempty"`
 	URLWithoutPage string `json:"url_without_page,omitempty"`
