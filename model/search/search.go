@@ -13,7 +13,7 @@ type Search struct {
 	Query      string     `json:"query"`
 	Filter     []string   `json:"filter,omitempty"`
 	Sort       Sort       `json:"sort,omitempty"`
-	Pagination Pagination `json:"offset,omitempty"`
+	Pagination Pagination `json:"pagination,omitempty"`
 	Response   Response   `json:"response"`
 }
 
