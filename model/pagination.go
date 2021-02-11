@@ -12,6 +12,6 @@ type Pagination struct {
 
 // PageToDisplay represents a page to display in pagination with their corresponding URL
 type PageToDisplay struct {
-	Page int    `json:"page"`
-	URL  string `json:"url"`
+	PageNumber int    `json:"page_number"`
+	URL        string `json:"url"`
 }
