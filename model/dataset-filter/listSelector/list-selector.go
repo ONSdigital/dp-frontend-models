@@ -5,8 +5,9 @@ import "github.com/ONSdigital/dp-frontend-models/model"
 // Page ...
 type Page struct {
 	model.Page
-	Data     ListSelector `json:"data"`
-	FilterID string       `json:"job_id"`
+	Pagination model.Pagination `json:"pagination,omitempty"`
+	Data       ListSelector     `json:"data"`
+	FilterID   string           `json:"job_id"`
 }
 
 // ListSelector ..
