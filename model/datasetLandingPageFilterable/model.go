@@ -31,6 +31,13 @@ type DatasetLandingPage struct {
 	DatasetTitle             string        `json:"dataset_title"`
 	UnitOfMeasurement        string        `json:"unit_of_measurement"`
 	Methodologies            []Methodology `json:"methodology"`
+	NomisReferenceURL        string        `json:"nomis_reference_url,omitempty"`
+	UsageNotes               []UsageNote   `json:"UsageNotes"`
+}
+
+type UsageNote struct {
+	Note  string `json:"note,omitempty"`
+	Title string `json:"title,omitempty"`
 }
 
 type Publication struct {
