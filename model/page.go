@@ -27,3 +27,11 @@ type Page struct {
 type FeatureFlags struct {
 	HideCookieBanner bool `json:"hide_cookie_banner"`
 }
+
+//NewPage instantiates the base Page type with configurable fields
+func NewPage(path, domain string) *Page {
+	return &Page{
+		PatternLibraryAssetsPath: path,
+		SiteDomain:               domain,
+	}
+}
