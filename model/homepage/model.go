@@ -69,4 +69,5 @@ type Feature struct {
 	Description string `json:"description"`
 	URI         string `json:"uri"`
 	ImageURL    string `json:"image_url"`
+	ImageAlt	string `json:"image_alt"`
 }
