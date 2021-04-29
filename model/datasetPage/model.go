@@ -9,24 +9,6 @@ type Page struct {
 	model.ContactDetails
 }
 
-//DatasetLandingPage represents a frontend dataset landing page
-/*
-type DatasetPage struct {
-	DatasetID           string    `json:"dataset_id"`
-	FilterID            string    `json:"filter_id"`
-	Related             Related   `json:"related"`
-	Datasets            []Dataset `json:"datasets"`
-	Notes               string    `json:"markdown"`
-	MetaDescription     string    `json:"meta_description"`
-	IsNationalStatistic bool      `json:"national_statistic"`
-	ReleaseDate         string    `json:"release_date"`
-	NextRelease         string    `json:"next_release"`
-	IsTimeseries        bool      `json:"is_timeseries"`
-	Corrections         []Message `json:"corrections"`
-	Notices             []Message `json:"notices"`
-	ParentPath          string    `json:"parent_path"`
-}*/
-
 //Related content (split by type) to this page
 type Related struct {
 	Publications       []model.Related `json:"related_publications"`
@@ -38,9 +20,15 @@ type Related struct {
 
 //Dataset has the file and title information for an individual dataset
 type DatasetPage struct {
-	Downloads          []Download          `json:"downloads"`
-	Versions           []Version           `json:"versions"`
-	SupplementaryFiles []SupplementaryFile `json:"supplementary_files"`
+	Versions            []Version           `json:"versions"`
+	SupplementaryFiles  []SupplementaryFile `json:"supplementary_files"`
+	Downloads           []Download          `json:"downloads"`
+	IsNationalStatistic bool                `json:"national_statistic"`
+	ReleaseDate         string              `json:"releaseDate"`
+	NextRelease         string              `json:"nextRelease"`
+	DatasetID           string              `json:"datasetId"`
+	URI                 string              `json:"uri"`
+	Edition             string              `json:"edition"`
 }
 
 //Download has the details for the an individual dataset's downloadable files
@@ -48,6 +36,7 @@ type Download struct {
 	Extension string `json:"extension"`
 	Size      string `json:"size"`
 	URI       string `json:"uri"`
+	File      string `json:"file"`
 }
 
 //SupplementaryFile is a downloadable file that is associated to an individual dataset
@@ -59,8 +48,9 @@ type SupplementaryFile struct {
 }
 
 type Version struct {
-	URI              string `json:"url"`
-	UpdateDate       string `json:"updateDate"`
-	CorrectionNotice string `json:"correctionNotice"`
-	Label            string `json:"label"`
+	URI              string     `json:"url"`
+	UpdateDate       string     `json:"updateDate"`
+	CorrectionNotice string     `json:"correctionNotice"`
+	Label            string     `json:"label"`
+	Downloads        []Download `json:"downloads"`
 }
