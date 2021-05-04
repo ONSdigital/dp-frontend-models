@@ -15,7 +15,7 @@ type DatasetPage struct {
 	SupplementaryFiles  []SupplementaryFile `json:"supplementary_files"`
 	Downloads           []Download          `json:"downloads"`
 	IsNationalStatistic bool                `json:"national_statistic"`
-	ReleaseDate         string              `json:"releaseDate"`
+	ReleaseDate         string              `json:"release_date"`
 	NextRelease         string              `json:"nextRelease"`
 	DatasetID           string              `json:"datasetId"`
 	URI                 string              `json:"uri"`
@@ -39,6 +39,7 @@ type SupplementaryFile struct {
 	URI       string `json:"uri"`
 }
 
+//Version has the details for a previous version of the dataset
 type Version struct {
 	URI              string     `json:"url"`
 	UpdateDate       string     `json:"updateDate"`
