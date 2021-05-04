@@ -42,8 +42,8 @@ type SupplementaryFile struct {
 //Version has the details for a previous version of the dataset
 type Version struct {
 	URI              string     `json:"url"`
-	UpdateDate       string     `json:"updateDate"`
-	CorrectionNotice string     `json:"correctionNotice"`
+	UpdateDate       string     `json:"update_date"`
+	CorrectionNotice string     `json:"correction_notice"`
 	Label            string     `json:"label"`
 	Downloads        []Download `json:"downloads"`
 }
