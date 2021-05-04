@@ -9,15 +9,6 @@ type Page struct {
 	model.ContactDetails
 }
 
-//Related content (split by type) to this page
-type Related struct {
-	Publications       []model.Related `json:"related_publications"`
-	FilterableDatasets []model.Related `json:"related_filterable_datasets"`
-	Datasets           []model.Related `json:"related_datasets"`
-	Methodology        []model.Related `json:"related_methodology"`
-	Links              []model.Related `json:"related_links"`
-}
-
 //Dataset has the file and title information for an individual dataset
 type DatasetPage struct {
 	Versions            []Version           `json:"versions"`
