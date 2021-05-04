@@ -16,8 +16,8 @@ type DatasetPage struct {
 	Downloads           []Download          `json:"downloads"`
 	IsNationalStatistic bool                `json:"national_statistic"`
 	ReleaseDate         string              `json:"release_date"`
-	NextRelease         string              `json:"nextRelease"`
-	DatasetID           string              `json:"datasetId"`
+	NextRelease         string              `json:"next_release"`
+	DatasetID           string              `json:"dataset_id"`
 	URI                 string              `json:"uri"`
 	Edition             string              `json:"edition"`
 	Markdown            string              `json:"markdown"`
