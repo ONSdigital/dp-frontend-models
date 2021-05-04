@@ -29,6 +29,7 @@ type DatasetPage struct {
 	DatasetID           string              `json:"datasetId"`
 	URI                 string              `json:"uri"`
 	Edition             string              `json:"edition"`
+	Markdown            string              `json:"markdown"`
 }
 
 //Download has the details for the an individual dataset's downloadable files
