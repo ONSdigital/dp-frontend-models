@@ -6,7 +6,6 @@ import "github.com/ONSdigital/dp-frontend-models/model"
 type Page struct {
 	model.Page
 	Radio              string `json:"radio"`
-	Purpose            string `json:"purpose"`
 	Feedback           string `json:"feedback"`
 	Name               string `json:"name"`
 	Email              string `json:"email"`
