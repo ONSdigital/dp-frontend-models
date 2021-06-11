@@ -5,7 +5,8 @@ import "github.com/ONSdigital/dp-frontend-models/model"
 // Page represents the search page
 type Page struct {
 	model.Page
-	Data Search `json:"data"`
+	Data       Search      `json:"data"`
+	Department *Department `json:"department"`
 }
 
 // Search represents all search parameters and response data of the search
@@ -110,4 +111,12 @@ type MatchDetails struct {
 	Value string `json:"value,omitempty"`
 	Start int    `json:"start"`
 	End   int    `json:"end"`
+}
+
+// Department represents other gov departmetns that match the search term
+type Department struct {
+	Name  string `json:"name"`
+	URL   string `json:"url"`
+	Code  string `json:"code"`
+	Match string `json:"match"`
 }
