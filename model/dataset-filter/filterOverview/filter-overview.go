@@ -12,6 +12,7 @@ type Page struct {
 // FilterOverview ...
 type FilterOverview struct {
 	Dimensions                 []Dimension   `json:"dimensions"`
+	UnsetDimensions            []string      `json:"unset_dimensions"`
 	PreviewAndDownload         Link          `json:"preview_and_download"`
 	PreviewAndDownloadDisabled bool          `json:"preview_and_download_disabled"`
 	ClearAll                   Link          `json:"clear_all"`
@@ -19,6 +20,7 @@ type FilterOverview struct {
 	IsLatestVersion            bool          `json:"is_latest_version"`
 	LatestVersion              LatestVersion `json:"latest_version"`
 	DatasetTitle               string        `json:"dataset_title"`
+	HasError                   bool          `json:"has_error"`
 }
 
 // Dimension ...
@@ -26,6 +28,7 @@ type Dimension struct {
 	Filter          string   `json:"filter"`
 	AddedCategories []string `json:"added_categories"`
 	Link            Link     `json:"link"`
+	HasNoCategory   bool     `json:"has_no_category"`
 }
 
 // Link ...
