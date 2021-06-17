@@ -20,7 +20,7 @@ type FilterOverview struct {
 	IsLatestVersion            bool          `json:"is_latest_version"`
 	LatestVersion              LatestVersion `json:"latest_version"`
 	DatasetTitle               string        `json:"dataset_title"`
-	HasError                   bool          `json:"has_error"`
+	HasUnsetDimensions         bool          `json:"has_unset_dimensions"`
 }
 
 // Dimension ...
