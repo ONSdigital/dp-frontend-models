@@ -34,10 +34,11 @@ type SortOptions struct {
 
 // Response represents the search results
 type Response struct {
-	Count       int           `json:"count"`
-	Categories  []Category    `json:"categories"`
-	Items       []ContentItem `json:"items"`
-	Suggestions []string      `json:"suggestions,omitempty"`
+	Count                 int           `json:"count"`
+	Categories            []Category    `json:"categories"`
+	Items                 []ContentItem `json:"items"`
+	Suggestions           []string      `json:"suggestions,omitempty"`
+	AdditionalSuggestions []string      `json:"additional_suggestions,omitempty"`
 }
 
 // Category represents all the search categories in search page
