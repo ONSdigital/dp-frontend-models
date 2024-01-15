@@ -1,3 +1,5 @@
+⚠️ This repository will be archived in January 2024 as it is no longer in development. ⚠️
+
 dp-frontend-models
 ================
 
